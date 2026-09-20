@@ -1,0 +1,20 @@
+{
+  "name": "playwright-ui-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "po-test-chromium": "npx playwright test test-with-page-objects.spec.ts --project=chromium",
+    "po-test-firefox": "npx playwright test test-with-page-objects.spec.ts --project=firefox",
+    "po-test-all": "npm run po-test-chromium && npm run po-test-firefox"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.5.0"
+  }
+}
