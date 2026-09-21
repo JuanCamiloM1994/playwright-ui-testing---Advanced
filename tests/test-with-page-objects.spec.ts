@@ -3,7 +3,7 @@ import { PageManager } from '../page-objets/page-manager';
 import { faker } from '@faker-js/faker';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('https://playground.bondaracademy.com/');
+    await page.goto('/');
 });
 
 test('Navigate to form layouts page', async ({ page }) => {
@@ -23,7 +23,7 @@ test('Parametrized page Object methods', async ({ page }) => {
     const randomEmail = faker.internet.email({provider: 'example.com'});
 
     await pom.navigationPage.formLayoutsPage();
-    await pom.formLayoutsPage.submitUsingTheGridForm('test@example.com', 'password123', 'Option 1');
+    await pom.formLayoutsPage.submitUsingTheGridForm(process.env.TEST_USER_EMAIL!, process.env.TEST_USER_PASSWORD!, 'Option 1');
     await page.screenshot({ path: 'screenshots/fomlayoutsPage.png' });
     const formLayoutPageBuffer = await page.screenshot();
     console.log(formLayoutPageBuffer.toString('base64'));

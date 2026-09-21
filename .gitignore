@@ -6,3 +6,5 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+# always ignore environment files but for this example project we aren't including it in the gitignore
+#.env*
