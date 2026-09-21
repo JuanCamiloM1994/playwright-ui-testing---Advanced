@@ -30,7 +30,7 @@ export default defineConfig({
     {
       name: 'page-object-tests',
       testMatch: '*page-objects.spec.ts',
-    }
+    },
     {
       name: 'chromium',
       timeout: 20000, 
