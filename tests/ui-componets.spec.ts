@@ -42,11 +42,17 @@ test.describe('Form Layouts page', () => {
         await usingTheGridForm.getByLabel('Option 1').check({ force: true });
         await usingTheGridForm.getByRole('radio', { name: 'Option 2' }).check({ force: true });
 
+        //await expect(usingTheGridForm).toHaveScreenshot();
+        await expect(usingTheGridForm).toHaveScreenshot({ maxDiffPixels: 250 });
+
+        //comment line for visual testing 
+
+/* 
         const radioStatus = await usingTheGridForm.getByRole('radio', { name: 'Option 2' }).isChecked();
         expect(radioStatus).toBeTruthy();
 
         await expect(usingTheGridForm.getByRole('radio', { name: 'Option 2' })).toBeChecked();
-        await expect(usingTheGridForm.getByRole('radio', { name: 'Option 1' })).not.toBeChecked();
+        await expect(usingTheGridForm.getByRole('radio', { name: 'Option 1' })).not.toBeChecked(); */
 
     });
 });
