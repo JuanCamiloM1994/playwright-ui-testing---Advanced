@@ -14,7 +14,7 @@ test.describe('Form Layouts page', () => {
     });
 
 
-    test('input fields', async ({ page }, testInfo) => {
+    test('input fields', { tag: ['@smoke', '@fields'] }, async ({ page }, testInfo) => {
 
         if (testInfo.retry) {
             //Clean test data
@@ -36,7 +36,7 @@ test.describe('Form Layouts page', () => {
 
     });
 
-    test('Radio buttons', async ({ page }) => {
+    test('Radio buttons', { tag: ['@smoke', '@regression'] }, async ({ page }) => {
         const usingTheGridForm = page.locator('nb-card', { hasText: 'Using the Grid' });
 
         await usingTheGridForm.getByLabel('Option 1').check({ force: true });

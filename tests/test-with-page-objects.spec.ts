@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
     pom = new PageManager(page);
 }); */
 
-test('Navigate to form layouts page', async ({ pom }) => {
+test('Navigate to form layouts page', { tag: '@smoke' }, async ({ pom }) => {
 
     await pom.navigationPage.formLayoutsPage();
     await pom.navigationPage.datePickerPage();
