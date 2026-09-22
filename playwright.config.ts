@@ -9,7 +9,7 @@ dotenv.config({ path: path.resolve(__dirname, process.env.TEST_ENV ? `.env.${pro
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 10000, 
+  timeout: 10000,
   globalTimeout: 60000,
   expect: {
     timeout: 6000,
@@ -28,12 +28,16 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'mobile-tests',
+      use: { ...devices['iPhone 17 Pro'] },
+    },
+    {
       name: 'page-object-tests',
       testMatch: '*page-objects.spec.ts',
     },
     {
       name: 'chromium',
-      timeout: 20000, 
+      timeout: 20000,
       retries: 3,
       use: { ...devices['Desktop Chrome'] },
     },
